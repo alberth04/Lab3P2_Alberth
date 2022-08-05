@@ -14,18 +14,21 @@ public class Cohetes {
     private int numSerie;
     private int potencia;
     private int velocidad;
-    private ArrayList<Personas> personas = new ArrayList();
+    private ArrayList<Personas> personas = new ArrayList(); 
     
     //Constructor
 
     public Cohetes() {
     }
 
-    public Cohetes(double pesoSoportable) {
+    public Cohetes(double pesoSoportable, String nombre, int numSerie, int potencia) {
         this.pesoSoportable = pesoSoportable;
+        this.nombre = nombre;
+        this.numSerie = numSerie;
+        this.potencia = potencia;
     }
     
-    
+
     //Getter y Setter
 
     public double getPesoSoportable() {
@@ -80,7 +83,7 @@ public class Cohetes {
 
     @Override
     public String toString() {
-        return "Cohetes{" + "pesoSoportable=" + pesoSoportable + ", nombre=" + nombre + ", numSerie=" + numSerie + ", potencia=" + potencia + ", velocidad=" + velocidad + ", personas=" + personas + '}';
+        return "Cohetes{" + "pesoSoportable=" + pesoSoportable + ", nombre=" + nombre + ", numSerie=" + numSerie + ", potencia=" + potencia + ", velocidad=" + velocidad + ", personas=" + personas;
     }
     
     

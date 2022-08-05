@@ -17,11 +17,17 @@ public class DeFases extends Cohetes{
     
     //Constructor
 
-    public DeFases(int cantFases, int cantMotores, double altura) {
+    public DeFases() {
+        
+    }
+
+    public DeFases(int cantFases, int cantMotores, double altura, double pesoSoportable, String nombre, int numSerie, int potencia) {
+        super(pesoSoportable, nombre, numSerie, potencia);
         this.cantFases = cantFases;
         this.cantMotores = cantMotores;
         this.altura = altura;
     }
+    
     
     //Getter y Setter
 
@@ -53,7 +59,7 @@ public class DeFases extends Cohetes{
 
     @Override
     public String toString() {
-        return "DeFases{" + "cantFases=" + cantFases + ", cantMotores=" + cantMotores + ", altura=" + altura + '}';
+        return super.toString() +"DeFases{" + "cantFases=" + cantFases + ", cantMotores=" + cantMotores + ", altura=" + altura + '}';
     }
     
 }

@@ -11,9 +11,16 @@ public class Combustible_Liquido extends Cohetes{
     
     //Constructor
 
-    public Combustible_Liquido(double litrosGasolina) {
+    public Combustible_Liquido() {
+        super();
+    }
+
+    public Combustible_Liquido(double litrosGasolina, double pesoSoportable, String nombre, int numSerie, int potencia) {
+        super(pesoSoportable, nombre, numSerie, potencia);
         this.litrosGasolina = litrosGasolina;
     }
+    
+    
     
     //Getter y Setter
 
@@ -29,7 +36,7 @@ public class Combustible_Liquido extends Cohetes{
 
     @Override
     public String toString() {
-        return "Combustible_Liquido{" + "litrosGasolina=" + litrosGasolina + '}';
+        return super.toString()+ "Combustible_Liquido{" + "litrosGasolina=" + litrosGasolina + '}';
     }
     
 }
