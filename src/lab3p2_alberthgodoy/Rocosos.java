@@ -11,17 +11,19 @@ public class Rocosos extends Planetas{
     
     //Constructor
 
-    public Rocosos(double densidad, boolean vidaL) {
-        super();
+    public Rocosos(double densidad, boolean vidaL, String nombrePlaneta, double masa, double radio, double temperaturaProm) {
+        super(nombrePlaneta, masa, radio, temperaturaProm);
         this.densidad = densidad;
         this.vidaL = vidaL;
     }
+
+    
     
     //to String
 
     @Override
     public String toString() {
-        return "Rocosos{" + "densidad=" + densidad + ", vidaL=" + vidaL + '}';
+        return super.toString() + "Rocosos{" + "densidad=" + densidad + ", vidaL=" + vidaL + '}';
     }
     
     

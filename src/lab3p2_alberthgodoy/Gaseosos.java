@@ -12,11 +12,13 @@ public class Gaseosos extends Planetas{
     
     //Constructorr
 
-    public Gaseosos(double presion, int cantanillos) {
-        super();
+    public Gaseosos(double presion, int cantanillos, String nombrePlaneta, double masa, double radio, double temperaturaProm) {
+        super(nombrePlaneta, masa, radio, temperaturaProm);
         this.presion = presion;
         this.cantanillos = cantanillos;
     }
+
+    
     
     
     //Getter y Setter
@@ -41,7 +43,7 @@ public class Gaseosos extends Planetas{
 
     @Override
     public String toString() {
-        return "Gaseosos{" + "presion=" + presion + ", cantanillos=" + cantanillos + '}';
+        return super.toString()+ "Gaseosos{" + "presion=" + presion + ", cantanillos=" + cantanillos + '}';
     }
     
     
