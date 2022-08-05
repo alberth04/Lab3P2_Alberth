@@ -13,13 +13,20 @@ public class Lab3P2_AlberthGodoy {
     /**
      * @param args the command line arguments
      */
+    static ArrayList cohetes = new ArrayList();
+    static ArrayList planetas = new ArrayList();
+    
+    static int contNavelogro = 0;
+    static int contNaveNologro = 0;
+    static Scanner sc = new Scanner(System.in);
+    
+    
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        ArrayList cohetes = new ArrayList();
-        ArrayList planetas = new ArrayList();
+
         //Creando el Menu
         int opcionMenu = 0;
-
+        //Iniciados
+        
         while (opcionMenu != 8) {
             opcionMenu = Integer.parseInt(JOptionPane.showInputDialog("===============MENU===============\n"
                     + "1.) crear Cohete\n"
@@ -32,7 +39,7 @@ public class Lab3P2_AlberthGodoy {
                     + "8.) Salir del Programa"));
             switch (opcionMenu) {
                 case 1 -> {
-
+                    
                     //Agregar un cohete
                     //Agregar el PesoSoportable
                     double pesoSoportable = Double.parseDouble(JOptionPane.showInputDialog("Peso soportable del cohete: "));
@@ -54,7 +61,7 @@ public class Lab3P2_AlberthGodoy {
                     //Validacion
                     boolean validacion = false;
                     if (cohetes.isEmpty()) {
-
+                        
                     } else {
                         for (int i = 0; i < cohetes.size(); i++) {
                             //validacion
@@ -62,10 +69,10 @@ public class Lab3P2_AlberthGodoy {
                                 validacion = true;
                             }
                         }
-
+                        
                         while (validacion == true) {
                             serieCohete = Integer.parseInt(JOptionPane.showInputDialog("Algo salio mal,\nIngrese la serie del planeta: "));
-
+                            
                             for (int i = 0; i < cohetes.size(); i++) {
                                 //validacion
                                 if (cohetes.get(i) instanceof Cohetes && ((Cohetes) cohetes.get(i)).getNumSerie() == serieCohete) {
@@ -90,7 +97,7 @@ public class Lab3P2_AlberthGodoy {
                             + "3.) Solido\n"));
                     switch (tipoCohete) {
                         case 1 -> {
-
+                            
                             int pos = cohetes.size() - 1;
                             double litroGasolina = Double.parseDouble(JOptionPane.showInputDialog("Ingrese los litros de gasolina: "));
                             //validacion
@@ -101,7 +108,7 @@ public class Lab3P2_AlberthGodoy {
                             cohetes.add(new Combustible_Liquido(litroGasolina, pesoSoportable, nombreCohete, serieCohete, potenciaCohetes));
                         }
                         case 2 -> {
-
+                            
                             int pos = cohetes.size() - 1;
                             //Agregar cantFases
                             int cantFases = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de fases: "));
@@ -126,7 +133,7 @@ public class Lab3P2_AlberthGodoy {
                             cohetes.add(new DeFases(cantFases, cantMotores, altura, pesoSoportable, nombreCohete, serieCohete, potenciaCohetes));
                         }
                         case 3 -> {
-
+                            
                             int pos = cohetes.size() - 1;
                             //Agregar kilos combustibles
                             double kilosCombu = Double.parseDouble(JOptionPane.showInputDialog("ccantidad de kilos combustible"));
@@ -143,10 +150,10 @@ public class Lab3P2_AlberthGodoy {
                             }
                             cohetes.add(new Combustible_Solido(kilosCombu, material, pesoSoportable, nombreCohete, serieCohete, potenciaCohetes));
                         }
-
+                        
                         default ->
                             JOptionPane.showMessageDialog(null, "No existe esa opcion");
-
+                        
                     }
                 }
                 case 2 -> {
@@ -156,7 +163,7 @@ public class Lab3P2_AlberthGodoy {
                     //validacion
                     boolean validacion = false;
                     if (planetas.isEmpty()) {
-
+                        
                     } else {
                         for (int i = 0; i < planetas.size(); i++) {
                             //validacion
@@ -164,10 +171,10 @@ public class Lab3P2_AlberthGodoy {
                                 validacion = true;
                             }
                         }
-
+                        
                         while (validacion == true) {
                             nombrePlaneta = JOptionPane.showInputDialog("Algo salio mal,\nIngrese la serie del planeta: ");
-
+                            
                             for (int i = 0; i < planetas.size(); i++) {
                                 //validacion
                                 if (planetas.get(i) instanceof Planetas && ((Planetas) planetas.get(i)).getNombrePlaneta().equalsIgnoreCase(nombrePlaneta)) {
@@ -219,7 +226,7 @@ public class Lab3P2_AlberthGodoy {
                             if (vidaL == 's' || vidaL == 'S') {
                                 validar = true;
                             } else {
-
+                                
                             }
                             planetas.add(new Rocosos(densidadPlaneta, validar, nombrePlaneta, masaPlaneta, radioPlaneta, temperaturaPromPlaneta));
                         }
@@ -278,7 +285,7 @@ public class Lab3P2_AlberthGodoy {
                                         pesoPersona = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el peso de la persona: "));
                                     }
                                     ((Cohetes) cohetes.get(posCohete)).getPersonas().get(i).setPeso(pesoPersona);
-
+                                    
                                 }
                             }
                             case 2 -> {
@@ -301,9 +308,9 @@ public class Lab3P2_AlberthGodoy {
                         }
                     } else {
                         JOptionPane.showMessageDialog(null, "No existe ese cohete");
-
+                        
                     }
-
+                    
                 }
                 case 4 -> {
                     //Editar Planeta
@@ -322,19 +329,19 @@ public class Lab3P2_AlberthGodoy {
                                     String nombreLuna = JOptionPane.showInputDialog("Ingrese el nombre de la luna: ");
                                     while (!nombreLuna.matches("[ a-zA-z]+")) {
                                         nombreLuna = JOptionPane.showInputDialog("Ingrese el nombre de la luna: ");
-
+                                        
                                     }
                                     ((Planetas) planetas.get(posPlaneta)).getLunas().get(i).setNombre(nombreLuna);
                                     int numCrateres = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de crateres de la luna: "));
                                     while (numCrateres < 0) {
                                         numCrateres = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero de crateres de la luna: "));
                                     }
-                                     ((Planetas) planetas.get(posPlaneta)).getLunas().get(i).setCantCrateres(numCrateres);
+                                    ((Planetas) planetas.get(posPlaneta)).getLunas().get(i).setCantCrateres(numCrateres);
                                 }
                             }
                             case 2 -> {
                                 int posLuna = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion de luna a eliminar"));
-                                if (posLuna <  ((Planetas) planetas.get(posPlaneta)).getLunas().size()) {
+                                if (posLuna < ((Planetas) planetas.get(posPlaneta)).getLunas().size()) {
                                     ((Planetas) planetas.get(posPlaneta)).getLunas().remove(posLuna);
                                 } else {
                                     JOptionPane.showMessageDialog(null, "No existe esa Luna");
@@ -360,7 +367,7 @@ public class Lab3P2_AlberthGodoy {
                             JOptionPane.showMessageDialog(null, message);
                         }
                     }
-
+                    
                 }
                 case 6 -> {
                     //Listar Planetas
@@ -372,6 +379,41 @@ public class Lab3P2_AlberthGodoy {
                     }
                 }
                 case 7 -> {
+                    
+                    String message = "";
+                    for (Object object : planetas) {
+                        if (object instanceof Planetas) {
+                            message = String.format("[%d] %s%n", planetas.indexOf(object), object);
+                            JOptionPane.showMessageDialog(null, message);
+                        }
+                    }
+                    
+                    int posPlaneta = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del planeta: "));
+                    int opcionCohete = Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opcion: \n"
+                            + "1.) Un Cohete\n"
+                            + "2.) Todos los cohetes"));
+                    switch (opcionCohete) {
+                        case 1 -> {
+                            String message2 = "";
+                            for (Object object : cohetes) {
+                                
+                                if (object instanceof Cohetes) {
+                                    message2 += String.format("[%d] %s%n", cohetes.indexOf(object), object);
+                                    
+                                }
+                            }
+                            JOptionPane.showMessageDialog(null, message2);
+                            int posCohete = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del cohete"));
+                            escapeCohete(posPlaneta, posCohete);
+                            
+                        }
+                        case 2 -> {
+                            escapeCohetes(posPlaneta);
+                        }
+                        default ->
+                            JOptionPane.showMessageDialog(null, "No existe la opcion");
+                    }
+                    
                 }
                 case 8 -> {
                     JOptionPane.showMessageDialog(null, "Gracias por usar el programa");
@@ -380,7 +422,34 @@ public class Lab3P2_AlberthGodoy {
                     JOptionPane.showMessageDialog(null, "No existe esa opcion");
             }
         }
+        
+    }//fin main
 
+    public static void escapeCohete(int posPlante, int posCohete) {
+        double velocEscape = ((Planetas) planetas.get(posPlante)).getVelocEscape();
+        double velocidadCohete = ((Cohetes) cohetes.get(posCohete)).getVelocidad();
+        if (velocidadCohete > velocEscape) {
+            JOptionPane.showMessageDialog(null, "La nave lo logro");
+        } else {
+            JOptionPane.showMessageDialog(null, "La nave no lo logro");
+        }
     }
-
-}
+    
+    public static void escapeCohetes(int posPlante) {
+        double velocEscape = ((Planetas) planetas.get(posPlante)).getVelocEscape();
+        for (int i = 0; i < cohetes.size(); i++) {
+            double velocidadCohete = ((Cohetes) cohetes.get(i)).getVelocidad();
+            if (velocidadCohete > velocEscape) {
+                JOptionPane.showMessageDialog(null, "La nave lo logro");
+                contNavelogro++;
+            } else {
+                JOptionPane.showMessageDialog(null, "La nave no lo logro");
+                contNaveNologro++;
+            }
+        }
+        String message = String.format("Cantidad de naves que lo lograron = %d%n"
+                + "Cantidad de naves que no lo lograron = %d%n", contNavelogro, contNaveNologro);
+        JOptionPane.showMessageDialog(null, message);
+    }
+    
+}//fin lass

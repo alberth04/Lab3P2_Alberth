@@ -25,6 +25,13 @@ public class Combustible_Solido extends Cohetes{
         this.kilosCombu = kilosCombu;
         this.nombreMaterial = nombreMaterial;
     }
+
+    public Combustible_Solido(double kilosCombu, String nombreMaterial, double pesoSoportable, String nombre, int numSerie, int potencia, double velocidad) {
+        super(pesoSoportable, nombre, numSerie, potencia, velocidad);
+        this.kilosCombu = kilosCombu;
+        this.nombreMaterial = nombreMaterial;
+    }
+    
     
     
     //Getter y Setter

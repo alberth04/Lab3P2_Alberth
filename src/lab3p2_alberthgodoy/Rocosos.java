@@ -17,6 +17,12 @@ public class Rocosos extends Planetas{
         this.vidaL = vidaL;
     }
 
+    public Rocosos(double densidad, boolean vidaL, String nombrePlaneta, double masa, double radio, double temperaturaProm, double velocEscape) {
+        super(nombrePlaneta, masa, radio, temperaturaProm, velocEscape);
+        this.densidad = densidad;
+        this.vidaL = vidaL;
+    }
+
     
     
     //to String

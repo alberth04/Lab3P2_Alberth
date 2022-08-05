@@ -18,6 +18,12 @@ public class Gaseosos extends Planetas{
         this.cantanillos = cantanillos;
     }
 
+    public Gaseosos(double presion, int cantanillos, String nombrePlaneta, double masa, double radio, double temperaturaProm, double velocEscape) {
+        super(nombrePlaneta, masa, radio, temperaturaProm, velocEscape);
+        this.presion = presion;
+        this.cantanillos = cantanillos;
+    }
+
     
     
     

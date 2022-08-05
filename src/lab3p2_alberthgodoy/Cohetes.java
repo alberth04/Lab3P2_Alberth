@@ -2,6 +2,7 @@
 package lab3p2_alberthgodoy;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -13,7 +14,7 @@ public class Cohetes {
     private String nombre;
     private int numSerie;
     private int potencia;
-    private int velocidad;
+    private double velocidad;
     private ArrayList<Personas> personas = new ArrayList(); 
     
     //Constructor
@@ -27,6 +28,16 @@ public class Cohetes {
         this.numSerie = numSerie;
         this.potencia = potencia;
     }
+
+    public Cohetes(double pesoSoportable, String nombre, int numSerie, int potencia, double velocidad) {
+        this.pesoSoportable = pesoSoportable;
+        this.nombre = nombre;
+        this.numSerie = numSerie;
+        this.potencia = potencia;
+        this.velocidad = velocidad;
+    }
+    
+    
     
 
     //Getter y Setter
@@ -63,11 +74,11 @@ public class Cohetes {
         this.potencia = potencia;
     }
 
-    public int getVelocidad() {
+    public double getVelocidad() {
         return velocidad;
     }
 
-    public void setVelocidad(int velocidad) {
+    public void setVelocidad(double velocidad) {
         this.velocidad = velocidad;
     }
 
@@ -84,6 +95,14 @@ public class Cohetes {
     @Override
     public String toString() {
         return "Cohetes{" + "pesoSoportable=" + pesoSoportable + ", nombre=" + nombre + ", numSerie=" + numSerie + ", potencia=" + potencia + ", velocidad=" + velocidad + ", personas=" + personas;
+    }
+    
+    //Calcular velocidad
+    public double calcularVelocidadCohete(){
+        Random rnd = new Random();
+        int numrandom = rnd.nextInt(20000-5000+1)+5000;
+        System.out.println(numrandom);
+        return velocidad = numrandom * potencia;
     }
     
     

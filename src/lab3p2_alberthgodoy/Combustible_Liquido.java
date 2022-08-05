@@ -19,6 +19,12 @@ public class Combustible_Liquido extends Cohetes{
         super(pesoSoportable, nombre, numSerie, potencia);
         this.litrosGasolina = litrosGasolina;
     }
+
+    public Combustible_Liquido(double litrosGasolina, double pesoSoportable, String nombre, int numSerie, int potencia, double velocidad) {
+        super(pesoSoportable, nombre, numSerie, potencia, velocidad);
+        this.litrosGasolina = litrosGasolina;
+    }
+    
     
     
     

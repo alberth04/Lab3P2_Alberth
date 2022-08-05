@@ -26,9 +26,19 @@ public class Planetas {
         this.nombrePlaneta = nombrePlaneta;
         this.masa = masa;
         this.radio = radio;
-        this.temperaturaProm = temperaturaProm;
+        this.temperaturaProm = temperaturaProm; 
         
     }
+
+    public Planetas(String nombrePlaneta, double masa, double radio, double temperaturaProm, double velocEscape) {
+        this.nombrePlaneta = nombrePlaneta;
+        this.masa = masa;
+        this.radio = radio;
+        this.temperaturaProm = temperaturaProm;
+        this.velocEscape = velocEscape;
+    }
+    
+    
     
     
 

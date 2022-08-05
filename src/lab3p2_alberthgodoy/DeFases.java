@@ -27,6 +27,13 @@ public class DeFases extends Cohetes{
         this.cantMotores = cantMotores;
         this.altura = altura;
     }
+
+    public DeFases(int cantFases, int cantMotores, double altura, double pesoSoportable, String nombre, int numSerie, int potencia, double velocidad) {
+        super(pesoSoportable, nombre, numSerie, potencia, velocidad);
+        this.cantFases = cantFases;
+        this.cantMotores = cantMotores;
+        this.altura = altura;
+    }
     
     
     //Getter y Setter
