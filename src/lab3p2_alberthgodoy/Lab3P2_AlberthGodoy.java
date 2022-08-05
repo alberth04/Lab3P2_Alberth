@@ -26,7 +26,7 @@ public class Lab3P2_AlberthGodoy {
         //Creando el Menu
         int opcionMenu = 0;
         //Iniciados
-        
+        //Terminado
         while (opcionMenu != 8) {
             opcionMenu = Integer.parseInt(JOptionPane.showInputDialog("===============MENU===============\n"
                     + "1.) crear Cohete\n"
